@@ -1,0 +1,12 @@
+version: '3'
+services:
+  php-fpm-8.3:
+    build:
+      context: docker/php-fpm-8.3
+    container_name: php-fpm-8.3
+    volumes:
+      - ./:/var/www
+    restart: always
+    environment:
+      XDEBUG_CONFIG: "remote_host=192.168.100.1 remote_enable=1"
+      PHP_IDE_CONFIG: "serverName=Docker"
