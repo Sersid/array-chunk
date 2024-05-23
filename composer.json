@@ -1,5 +1,5 @@
 {
-  "name": "sersid/array-chunk",
+  "name": "sersid/lazy-chunk",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -13,9 +13,7 @@
     "php": "^8.2"
   },
   "autoload": {
-    "psr-4": {
-      "Sersid\\": "src/"
-    }
+    "files": ["src/function.php"]
   },
   "autoload-dev": {
     "psr-4": {
