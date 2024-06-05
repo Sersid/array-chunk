@@ -8,7 +8,7 @@ use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertSame;
 
-#[TestDox('Tests for \Samson\array_chunk() function')]
+#[TestDox('Tests for \Samson\lazy_chunk() function')]
 final class LazyChunkTest extends TestCase
 {
     public static function dataProvider(): iterable
@@ -101,11 +101,9 @@ final class LazyChunkTest extends TestCase
     #[DataProvider('dataProvider')]
     public function test(array $array, int $length = 50, bool $preserve_keys = false): void
     {
-        $result = lazy_chunk($array, $length, $preserve_keys);
-
         assertSame(
             array_chunk($array, $length, $preserve_keys),
-            iterator_to_array($result)
+            iterator_to_array(lazy_chunk($array, $length, $preserve_keys))
         );
     }
 }
