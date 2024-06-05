@@ -8,7 +8,7 @@ use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertSame;
 
-#[TestDox('Tests for \Samson\lazy_chunk() function')]
+#[TestDox('Tests for lazy_chunk() function')]
 final class LazyChunkTest extends TestCase
 {
     public static function dataProvider(): iterable
